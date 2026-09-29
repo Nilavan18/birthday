@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#120b22">
+<title>For Pooja ❤️</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+Tamil:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0d1c;--rose:#e0607e;--plum:#6b3fa0;--text:#f6ecf0;--muted:#c9b8c9;
+--serif:"Cormorant Garamond",Georgia,serif;--tamil:"Noto Serif Tamil","Latha",serif}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;background:#120b22 linear-gradient(165deg,#0b1b2e 0%,#1a1033 55%,#2c1024 100%);color:var(--text);font-family:var(--serif);overflow:hidden;-webkit-tap-highlight-color:transparent}
+#sky{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+.glow{position:fixed;inset:0;z-index:0;pointer-events:none;
+background:radial-gradient(55% 40% at 80% 8%,rgba(240,170,90,.16),transparent 70%),
+radial-gradient(60% 45% at 15% 95%,rgba(224,96,126,.24),transparent 70%);transition:opacity 1.5s}
+.glow.boost{background:radial-gradient(70% 55% at 50% 60%,rgba(240,140,110,.5),transparent 70%),radial-gradient(55% 45% at 85% 10%,rgba(240,170,90,.25),transparent 70%)}
+main{position:relative;z-index:1;height:100dvh}
+.scene{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.4rem;
+padding:max(1.5rem,env(safe-area-inset-top)) 1.5rem max(1.5rem,env(safe-area-inset-bottom));text-align:center;
+opacity:0;visibility:hidden;transition:opacity .9s ease,visibility .9s;overflow-y:auto}
+.scene.active{opacity:1;visibility:visible}
+.scene.dark::before{content:"";position:fixed;inset:0;background:rgba(3,4,10,.75);z-index:-1}
+.big{font-weight:600;font-size:clamp(2.4rem,9vw,4.6rem);line-height:1.1;letter-spacing:.01em;text-shadow:0 0 40px rgba(224,96,126,.45)}
+.big.small{font-size:clamp(1.8rem,6vw,2.8rem)}
+.soft{font-size:clamp(1.25rem,4.4vw,1.7rem);color:var(--muted);max-width:30ch;line-height:1.5}
+.btn{font:600 1.15rem var(--serif);color:var(--text);background:rgba(255,255,255,.06);border:1px solid rgba(224,96,126,.6);
+padding:.95rem 1.8rem;min-height:48px;border-radius:999px;cursor:pointer;text-decoration:none;backdrop-filter:blur(10px);
+box-shadow:0 0 22px rgba(224,96,126,.3);animation:pulse 3.2s ease-in-out infinite;transition:transform .2s,background .3s}
+.btn:hover{background:rgba(224,96,126,.2)}.btn:active{transform:scale(.97)}
+.btn.ghost{animation:none;box-shadow:none;border-color:rgba(255,255,255,.25)}
+:focus-visible{outline:2px solid #fff;outline-offset:4px}
+@keyframes pulse{50%{box-shadow:0 0 34px rgba(224,96,126,.55)}}
+.hidden{opacity:0;pointer-events:none;transition:opacity 1.2s}.hidden.show{opacity:1;pointer-events:auto}
+/* birthday */
+.active .slow{animation:rise 2.4s ease both}
+.active .late{animation:rise 2s 1.6s ease both}.active .late2{animation:rise 1.6s 3.6s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
+#s-birthday .late,#s-birthday .late2{opacity:0}
+#s-birthday.active .late,#s-birthday.active .late2{animation-fill-mode:both}
+/* photos */
+.frame{width:min(86vw,420px);position:relative}
+.frame img{width:100%;aspect-ratio:4/5;max-height:62dvh;object-fit:cover;object-position:center 25%;border-radius:22px;
+box-shadow:0 0 60px rgba(224,96,126,.28),0 20px 50px rgba(0,0,0,.5);transition:opacity .8s,transform 1.6s;background:#151a33}
+.frame img.out{opacity:0;transform:scale(1.03)}
+.frame figcaption{margin-top:1.1rem;font-size:clamp(1.3rem,4.6vw,1.75rem);font-style:italic;min-height:3.4em;transition:opacity .8s}
+.frame figcaption.out{opacity:0}
+/* letter, lines */
+.letter{width:min(92vw,560px);max-height:100%;padding:1rem 0;display:flex;flex-direction:column;gap:1.05rem;align-items:center}
+.letter .em{font-size:1.7rem;font-weight:600;margin-top:.6rem}
+.letter p,.lines p{font-size:clamp(1.25rem,4.3vw,1.6rem);line-height:1.55;text-align:center}
+.rv{opacity:0;transform:translateY(12px);transition:opacity 1.6s ease,transform 1.6s ease}.rv.show{opacity:1;transform:none}
+.lines{display:flex;flex-direction:column;gap:1.6rem;max-width:34ch}.lines .em{font-size:1.9rem;font-weight:600}
+/* lyrics */
+.lyrics-bg{position:fixed;inset:0;z-index:-1;background:url(assets/photo1.jpg) center/cover;filter:blur(28px) brightness(.28);transform:scale(1.15)}
+.lyrics{min-height:60dvh;display:flex;flex-direction:column;justify-content:center;gap:.55rem;font-family:var(--tamil);width:min(92vw,560px)}
+.lyrics p{font-size:clamp(1.25rem,4.6vw,1.75rem);line-height:1.75;opacity:0;transition:opacity 1.8s,text-shadow 1.8s,color 1.8s}
+.lyrics p.seen{opacity:.35}.lyrics p.now{opacity:1;text-shadow:0 0 24px rgba(224,96,126,.8)}
+/* final */
+.sign{color:var(--text);font-size:clamp(1.5rem,5vw,2rem)}.tap{color:var(--muted);font-size:1.2rem;margin-top:.6rem}
+#heart{font-size:3.4rem;background:none;border:0;cursor:pointer;min-width:64px;min-height:64px;animation:beat 2.2s ease-in-out infinite;filter:drop-shadow(0 0 14px rgba(224,96,126,.8))}
+#heart.pop{animation:none;transform:scale(1.7);transition:transform .6s}
+@keyframes beat{50%{transform:scale(1.12)}}
+.made{color:var(--muted);font-size:1.1rem;margin-top:.6rem}
+.fx{position:fixed;pointer-events:none;z-index:5;font-size:1.3rem;animation:fly 1.6s ease-out forwards}
+@keyframes fly{to{transform:translate(var(--x),var(--y)) scale(.6);opacity:0}}
+@media(min-width:900px){.scene{gap:1.8rem}.frame{width:min(38vw,460px)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01s!important}
+#s-birthday .late,#s-birthday .late2{opacity:1}}
+</style>
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="glow" aria-hidden="true"></div>
+
+<main>
+  <section class="scene active" id="s-open">
+    <h1 class="big">Hey Pooja... 💗</h1>
+    <p class="soft">I made something for you.</p>
+    <button class="btn" data-go="s-birthday">Open Your Surprise ✨</button>
+  </section>
+
+  <section class="scene" id="s-birthday">
+    <h1 class="big slow">Happy Birthday, Pooja 💗</h1>
+    <p class="soft late">Today is your day... so for a little while, everything here is just for you.</p>
+    <button class="btn late2" data-go="s-photos">Continue</button>
+  </section>
+
+  <section class="scene" id="s-photos">
+    <figure class="frame">
+      <img id="ph" alt="" decoding="async">
+      <figcaption id="cap"></figcaption>
+    </figure>
+    <button class="btn" id="ph-next">Next</button>
+  </section>
+
+  <section class="scene" id="s-message">
+    <div class="letter" id="letter">
+      <h2 class="big small">For You 💗</h2>
+      
+      <p class="rv">Aana oru vishayam mattum sure-aa theriyum —<br>nee enakku romba special.</p>
+      <p class="rv">Sometimes, namma life-la sila people epdi ivlo important aagitaanga-nu namakkum puriyadhu. Aana avanga irukkaradhu mattum namakku oru different feeling kudukkum.</p>
+      <p class="rv">Nee appadi oru person.</p>
+      <p class="rv">Un birthday-ku naan perusa edhuvum promise panna virumbala. Aana oru simple vishayam mattum sollanum:</p>
+      <p class="rv">Enna nadandhaalum, unakku thevaiyana nerathula support panna naan mudinja alavukku eppovume iruppen.</p>
+      <p class="rv">Nee sirikkumbodhu, happy-aa irukkumbodhu, un dreams-ah chase pannumbodhu — adha paathu genuinely happy aagura oru person irukkaan-nu mattum nyabagam vechuko.</p>
+      <p class="rv em">I will be there for you always. 💗</p>
+      <button class="btn hidden" data-go="s-lyrics">Continue</button>
+    </div>
+  </section>
+
+  <section class="scene" id="s-lyrics">
+    <div class="lyrics-bg" aria-hidden="true"></div>
+    <div class="lyrics" id="lyrics" lang="ta" aria-live="polite"></div>
+    <button class="btn hidden" data-go="s-last">There's one last thing... ✨</button>
+  </section>
+
+  <section class="scene dark" id="s-last">
+    <div class="lines" id="last-lines">
+      <p class="rv">Unna pathi pesurathukku perfect-aana words enakku theriyala.
+        என்னை முழுதாய் அறிந்தவள் நீ,</p>
+<p class="rv">என் நிறைகளையும் குறைகளையும் புரிந்தவள் நீ.</p>
+<p class="rv">என் வாழ்க்கையில் இன்னும் நிறைய மாற்றங்கள் தேவை,</p>
+<p class="rv">
+என்னை நான் இன்னும் சரி செய்துகொள்ள வேண்டும்…
+என்னை நான் இன்னும் சிறந்தவனாக மாற்றிக்கொள்ள வேண்டும்…</p>
+<p class="rv">ஆனாலும்,</p>
+<p class="rv">என் மனதில் எப்போதுமே
+உனக்கென்று ஒரு தனி இடம் இருக்கும். 💗</p>
+
+<p class="rv">நீ என் வாழ்க்கையின் முடிவு என்று சொல்லவில்லை…
+ஆனால், என் மனதில் என்றும் அழியாத ஒரு அழகான இடம்
+உனக்காக இருக்கிறது. 🌙
+      </p>
+    </div>
+    <button class="btn hidden" data-go="s-music">Continue</button>
+  </section>
+
+  <section class="scene" id="s-music">
+    <p class="soft">Some feelings are meant to be heard. 🎵</p>
+    <h2 class="big small">One last song for you</h2>
+    <a class="btn" id="spotify" href="#" target="_blank" rel="noopener">Play 'Magalae' 💗</a>
+    <button class="btn ghost" data-go="s-final">Continue</button>
+  </section>
+
+  <section class="scene" id="s-final">
+    <h1 class="big">Happy Birthday, Pooja 💗</h1>
+    <p class="soft">Once again, you have a special place in my heart, always.</p>
+    <p class="soft">I hope this little surprise gives you at least one reason to smile today.</p>
+    <p class="soft sign">Keep smiling.<br>Keep shining.<br>Keep being you. ✨</p>
+    <p class="tap">Before you go… tap the heart 💗</p>
+    <button id="heart" aria-label="Tap the heart">💗</button>
+    <p class="big small hidden" id="bye">Okay... now go enjoy your birthday 😌💗</p>
+    <p class="made">— Made specially for Pooja 💗</p>
+  </section>
+</main>
+<script>
+/* ===== EDIT THESE ===== */
+const SPOTIFY_URL = "https://open.spotify.com/album/5cDr3o7wxFcG1c1ZAWsEzA?utm_source=chatgpt.com"; // paste the Spotify link to "Magalae"
+// Paste the song lyrics here, one line per entry (kept out of this file by design).
+const LYRICS = [
+ " எத்தனை தனிமை வாட்டும் போதும்",
+"எனக்குள் கேட்கும் கீதம் நீ",
+"துயரம் தாக்கும் போதும்",
+"உன் சிரிப்பில் மயக்கும் சாமி நீ",
+"குறைகள் உள்ள என்னை",
+"வியந்து ரசிக்கும் இதயம் நீ",
+"நானே வெறுக்கும் என்னை",
+"வாரி அணைக்கும் ஜீவன் நீ",
+"செல்லமே மகளே",
+"சந்தன அகலே",
+"சொந்தமே உயிரே",
+"தேன்மொழி"
+];
+const PHOTOS = [
+  {src:"assets/photo1.jpg", alt:"Pooja", cap:"Your smile has its own kind of magic."},
+  {src:"assets/photo2.jpg", alt:"Pooja", cap:"Some people become memories. Some become special."},
+  {src:"assets/photo3.jpg", alt:"Pooja", cap:"You became someone I genuinely care about."},
+  {src:"assets/photo4.jpg", alt:"Pooja", cap:"You make ordinary moments feel different."},
+  {src:"assets/photo5.jpg", alt:"Pooja", cap:"You deserve all the happiness you wish for."},
+  {src:"assets/photo6.jpg", alt:"Pooja", cap:"And this little surprise is just for you. 💗"}
+];
+/* ======================= */
+
+const $ = s => document.querySelector(s);
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* Stars */
+const cv = $("#sky"), cx = cv.getContext("2d");
+let stars = [];
+function size(){cv.width = innerWidth; cv.height = innerHeight;
+  stars = Array.from({length: reduce ? 30 : Math.min(70, innerWidth/12|0)}, () => ({
+    x:Math.random()*cv.width, y:Math.random()*cv.height, r:Math.random()*1.4+.3,
+    v:Math.random()*.15+.03, a:Math.random()*Math.PI*2}));}
+addEventListener("resize", size); size();
+(function draw(t){
+  cx.clearRect(0,0,cv.width,cv.height);
+  for(const s of stars){
+    if(!reduce){s.y -= s.v; if(s.y<-3) s.y = cv.height+3;}
+    cx.globalAlpha = .35 + .35*Math.sin(t/1200 + s.a);
+    cx.fillStyle = "#ffe9f0"; cx.beginPath(); cx.arc(s.x,s.y,s.r,0,7); cx.fill();
+  }
+  requestAnimationFrame(draw);
+})(0);
+
+/* Hearts / burst */
+function burst(x, y, n = 14, set = ["❤️","✨","💗","⭐"]){
+  for(let i=0;i<n;i++){
+    const e = document.createElement("span"); e.className = "fx";
+    e.textContent = set[i % set.length]; e.style.left = x+"px"; e.style.top = y+"px";
+    const a = Math.random()*Math.PI*2, d = 70 + Math.random()*110;
+    e.style.setProperty("--x", Math.cos(a)*d+"px"); e.style.setProperty("--y", Math.sin(a)*d+"px");
+    document.body.appendChild(e); setTimeout(() => e.remove(), 1700);
+  }
+}
+
+/* Scenes */
+const enter = {
+  "s-photos": () => showPhoto(0),
+  "s-message": () => revealAll("#letter .rv", "#letter .btn", 1900),
+  "s-lyrics": runLyrics,
+  "s-last": () => revealAll("#last-lines .rv", "#s-last .btn", 2600),
+};
+let current = "s-open", token = 0;
+async function go(id, e){
+  if(e && e.clientX !== undefined && current === "s-open") burst(e.clientX, e.clientY, 10, ["❤️","✨"]);
+  const my = ++token;
+  $("#"+current).classList.remove("active");
+  await sleep(reduce ? 50 : 800);
+  if(my !== token) return;
+  current = id; $("#"+id).classList.add("active");
+  enter[id] && enter[id]();
+}
+document.querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", e => go(b.dataset.go, e)));
+
+/* Reveal helpers */
+async function revealAll(sel, btnSel, gap){
+  const my = token, els = [...document.querySelectorAll(sel)], btn = $(btnSel);
+  els.forEach(el => el.classList.remove("show")); btn.classList.remove("show");
+  await sleep(700);
+  for(const el of els){ if(my !== token) return; el.classList.add("show"); await sleep(reduce ? 300 : gap); }
+  btn.classList.add("show");
+}
+
+/* Photos */
+let pi = 0;
+async function showPhoto(i){
+  const img = $("#ph"), cap = $("#cap"), p = PHOTOS[i];
+  img.classList.add("out"); cap.classList.add("out"); await sleep(i ? 600 : 0);
+  img.src = p.src; img.alt = p.alt; cap.textContent = p.cap; pi = i;
+  $("#ph-next").textContent = i === PHOTOS.length-1 ? "Continue" : "Next";
+  img.onload = img.onerror = () => { img.classList.remove("out"); cap.classList.remove("out"); };
+}
+$("#ph-next").addEventListener("click", () => pi < PHOTOS.length-1 ? showPhoto(pi+1) : go("s-message"));
+PHOTOS.slice(1).forEach(p => { const i = new Image(); i.src = p.src; }); // light preload
+
+/* Lyrics */
+async function runLyrics(){
+  const my = token, box = $("#lyrics"); box.innerHTML = ""; $("#s-lyrics .btn").classList.remove("show");
+  const ps = LYRICS.map(t => { const p = document.createElement("p"); p.textContent = t; box.appendChild(p); return p; });
+  await sleep(1200);
+  for(let i=0;i<ps.length;i++){
+    if(my !== token) return;
+    if(i) ps[i-1].className = "seen";
+    ps[i].className = "now"; await sleep(reduce ? 800 : 3200);
+  }
+  if(my !== token) return;
+  ps[ps.length-1].className = "seen"; $("#s-lyrics .btn").classList.add("show");
+}
+
+/* Music */
+const sp = $("#spotify");
+if(SPOTIFY_URL === "SPOTIFY_LINK_HERE"){ sp.addEventListener("click", e => { e.preventDefault(); console.warn("Add your Spotify link in index.html"); }); }
+else sp.href = SPOTIFY_URL;
+
+/* Heart */
+$("#heart").addEventListener("click", function(e){
+  const r = this.getBoundingClientRect();
+  this.classList.add("pop"); burst(r.left + r.width/2, r.top + r.height/2, 22);
+  $(".glow").classList.add("boost");
+  setTimeout(() => { this.style.visibility = "hidden"; $(".tap").style.display = "none"; $("#bye").classList.add("show"); }, 700);
+});
+</script>
+</body>
+</html>
